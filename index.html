@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área de Alunas • Mini Pudim</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Auth Modal (Initial Popup) -->
+    <div id="auth-modal" class="modal-overlay">
+        <div class="modal-content">
+            <h2>Bem-vinda à Área de Alunas</h2>
+            <p>Insira seu nome e código de acesso para continuar.</p>
+            <form id="auth-form">
+                <div class="input-group">
+                    <label for="student-name">Seu Nome</label>
+                    <input type="text" id="student-name" placeholder="Digite seu nome" required>
+                </div>
+                <div class="input-group">
+                    <label for="access-code">Código de Acesso</label>
+                    <input type="text" id="access-code" placeholder="Digite o código" required>
+                </div>
+                <button type="submit" class="btn-primary">Entrar na área de alunas</button>
+                <p id="auth-error" class="error-message"></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Upgrade Modal (Time-based) -->
+    <div id="upgrade-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <h2>⏳ Continue assistindo!</h2>
+            <p>Você está usando o acesso gratuito. Para liberar todas das aulas e materiais, insira o código Vip.</p>
+            <form id="upgrade-form">
+                <div class="input-group">
+                    <label for="upgrade-code">Código PRO</label>
+                    <input type="text" id="upgrade-code" placeholder="Digite seu codigo de contribuição" required>
+                </div>
+                <button type="submit" class="btn-primary">Liberar acesso total</button>
+                <button type="button" id="close-upgrade-btn" class="btn-secondary">Continuar com acesso
+                    Limitado</button>
+                <p id="upgrade-error" class="error-message"></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Video Modal -->
+    <div id="video-player-modal" class="modal-overlay hidden">
+        <div class="modal-content video-modal-content">
+            <button id="close-video-btn" class="close-btn">&times;</button>
+            <div class="video-container">
+                <iframe id="video-iframe" src="" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            </div>
+            <h3 id="modal-video-title"></h3>
+        </div>
+    </div>
+
+    <header class="site-header">
+        <div class="container header-content">
+            <div class="logo-area">
+                <img src="https://i.ibb.co/wZCBVcbf/583451545-690653527442025-7201174840546481878-n.jpg"
+                    alt="Logo Mini Pudim" class="logo-img">
+                <div class="logo-text">
+                    <h1>Área de Alunas </h1>
+                    <p>Chefe: Patricia Rocha</p>
+                </div>
+            </div>
+            <div class="user-welcome" id="user-welcome"></div>
+            <nav class="main-nav">
+                <button onclick="scrollToSection('videos-section')" class="nav-btn">Vídeos</button>
+                <button onclick="scrollToSection('pdfs-section')" class="nav-btn">PDFs</button>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-badge">🔒 Área Exclusiva</div>
+            <h2 class="hero-title">APrendaa Mini Pudim que vende todo dia</h2>
+            <p class="hero-subtitle">Acesse todas as aulas em vídeo e materiais complementares para alavancar suas
+                vendas.</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <section id="videos-section" class="content-section">
+            <div class="section-header">
+                <h3>Vídeos do curso</h3>
+                <p>Siga a ordem das aulas para melhor aproveitamento.</p>
+            </div>
+            <div id="videos-grid" class="cards-grid">
+                <!-- Video cards will be injected here by JS -->
+            </div>
+        </section>
+
+        <section id="pdfs-section" class="content-section">
+            <div class="section-header">
+                <h3>Materiais em PDF</h3>
+            </div>
+            <div id="pdfs-grid" class="cards-grid">
+                <!-- PDF cards will be injected here by JS -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2024 Mini Pudim. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
